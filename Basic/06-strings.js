@@ -33,3 +33,7 @@ lineas
 utilizando alt+96 
 para acento invertido `
 console.log(mensaje)
+
+let email = "javierjgc170@gmail.com"
+
+console.log(`Hola ${myname}!, tu email es ${email}`)
