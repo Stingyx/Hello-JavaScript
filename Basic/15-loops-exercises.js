@@ -39,13 +39,13 @@ console.log(`${valor}`)
  */
 
 // 5. Escribe un bucle que cuente el número de vocales en una cadena de texto
-/* 
-const myString = "aeiouAEIOU"
+
+/* const myString = "aeiouAEIOU"
 let contador =0
 let mystring2 = "Prueba de funcionamiento"
 
 for (let letra of myString) {
-    if (myString.includes(letra)) {
+    if (mystring2.includes(letra)) {
         contador++;
         //console.log(contador)
     }
@@ -102,7 +102,7 @@ console.log(fib)
  */
 // 10. Dado un array de números, usa un bucle para crear un nuevo array que contenga solo los números mayores a 10
 
-Numarray = [1,10,15,4,2,24,0,29,15,4]
+/* Numarray = [1,10,15,4,2,24,0,29,15,4]
 let nuevoarray = []
 let i = 0
 do{
@@ -112,4 +112,4 @@ do{
 i++
 }while(i<Numarray.length)
 
-console.log(nuevoarray)
+console.log(nuevoarray) */
