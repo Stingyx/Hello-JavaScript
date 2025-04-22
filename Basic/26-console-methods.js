@@ -71,4 +71,4 @@ function FuncB(){
 FuncA()
 
 //clear
-console.clear()
+//console.clear()

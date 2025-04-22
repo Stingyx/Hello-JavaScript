@@ -103,17 +103,18 @@ let myc =[]
 
 // 9. Crea una función que verifique si un objeto tiene una propiedad específica y lance una excepción personalizada
 
-let games = {
-    name : "shangri",
-    plataforma : "pc",
-    año : 2015
-}
+// let games = {
+//     name : "shangri",
+//     plataforma : "pc",
+//     año : 2015
+// }
 
-try{
-    console.log(games.horas)
-}catch(error){
-    throw new Error("El objeto no tiene esta propiedad!")
-}
+// try{
+//     if()
+//     console.log(games.horas)
+// }catch(error){
+//     throw new Error("El objeto no tiene esta propiedad!")
+// }
 
 
 
