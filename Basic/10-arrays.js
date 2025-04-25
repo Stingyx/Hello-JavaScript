@@ -67,3 +67,4 @@ console.log(mynewaarray)
 
 myarray.splice(1,3) //Elimina elementos desde 1 a 3 en este caso
 console.log(myarray)
+

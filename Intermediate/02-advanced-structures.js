@@ -120,7 +120,9 @@ console.log(myMap)
 myMap.forEach((value,key) => console.log(`${key}: ${value}`))
 
 //-Conversión
+
 //Map a array
+
 const MyArrayFromMap = Array.from(myMap)
 console.log(MyArrayFromMap)
 
