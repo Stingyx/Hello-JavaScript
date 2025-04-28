@@ -67,10 +67,11 @@ console.log(assign3)
 
 
 class Pago  {
-    constructor (){
+    constructor (cantidad){
         if(new.target === Pago){
             throw new Error("No puedes instanciar una clase abstracta")
         }
+        this.cantidad = cantidad
     }
 
     retiro(){
@@ -85,7 +86,7 @@ class Pago  {
 
 class Santander extends Pago{
     retiro(){
-        console.log("Prueba de retiro desde subclase")
+        console.log("Prueba de retiro desde subclase 1 (Santander)")
     }
 }
 
@@ -96,10 +97,87 @@ Mibanco.retiro()
 
 // 7. Utiliza polimorfismo en dos clases diferentes
 
+class BBVA extends Pago{
+    retiro(){
+        console.log("Prueba de retiro desde BBVA")
+    }
+}
 
+let BancoNomida = new BBVA()
+BancoNomida.retiro()
 
 // 8. Implementa un Mixin
 
+const Deposito = {
+    dep(){
+        console.log(`Depósito de ${cantidad}` )
+    }
+}
+
+class Azteca extends Pago{
+    retiro(){
+        console.log(`Deposito a Banco Ateca de ${this.cantidad} pesos.`)
+    }
+}
+
+Object.assign(Azteca.prototype,Deposito)
+
+const Persona1 = new Azteca(500)
+Persona1.retiro()
+
 // 9. Crea un Singleton
 
+
+const ID = Symbol("id")
+class Gym{
+    constructor(name){
+        if(Gym.instance){
+            return Gym.instance
+        }
+    this.name= name
+    Gym.instance = this
+    }
+}
+
+
+const Gym1 = new Gym("Javier")
+console.log(Gym1.name)
+const Gym2 = new Gym("Jared")
+console.log(Gym2.name)
+
+
 // 10. Desarrolla un Proxy
+
+const proxy = {
+    get(target,property){
+        console.log(`Se accede a la propiedad ${property}`)
+        ///return target[property]
+        if (property in target) {
+            return target[property];
+        } else {
+            return "Propiedad no encontrada";
+        }
+    },
+    set(target,property,value){
+        if(property === "edad" && (value <= 0 || value >120)){
+            throw new Error("La edad esta fuera de los límites.")
+        }else if(property === "nombre" && typeof value !== "string"){
+            throw new Error("Ingrese un nombre de usuario válido")
+        }
+        target[property] = value
+    }
+}
+
+class Validacion {
+    constructor(nombre,edad){
+        this.nombre = nombre
+        this.edad=edad
+    }
+}
+
+const PruebadeValidacion = new Proxy(new Validacion("Javier",25),proxy)
+console.log(PruebadeValidacion.nombre)
+console.log(PruebadeValidacion.edad)
+
+// PruebadeValidacion.nombre = 5
+//PruebadeValidacion.edad = 0
